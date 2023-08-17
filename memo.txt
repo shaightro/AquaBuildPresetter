@@ -1,0 +1,25 @@
+프로세스 관리자 여부 확인
+
+import ctypes
+
+if ctypes.windll.shell32.IsUserAnAdmin():
+    print('관리자권한으로 실행된 프로세스입니다.')
+else:
+    print('일반권한으로 실행된 프로세스입니다.')
+
+
+
+
+현재 사용자 계정 이름 가져오기
+import getpass
+getpass.getuser()
+
+
+
+
+
+파일 및 경로 존재 여부 확인
+
+import os
+os.path.isdir("경로명")
+os.path.isfile("파일명")
