@@ -580,7 +580,7 @@
        </rect>
       </property>
       <property name="toolTip">
-       <string>Boost 1.66을 빌드한 결과인 lib 파일이 있는 경로입니다. 예) D:\library\boost_1_66_0\stage\lib\</string>
+       <string/>
       </property>
       <property name="text">
        <string>Visual Studio 2008 설치 경로</string>
