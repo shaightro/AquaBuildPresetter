@@ -4,9 +4,11 @@ import getpass
 import os
 
 from WindowClass.GUI.SvnDetailWindowGUI import *
-class SvnDetailWindow(QDialog, Ui_dialog):
-    def __init__(self, x=None, y=None):
-        super().__init__()
+
+
+class SvnDetailWindow(QDialog, Ui_svnignoredialog):
+    def __init__(self, parent=None, x=None, y=None):
+        super().__init__(parent)
         self.setupUi(self)
         self.setFixedSize(QSize(400, 300))
         self.username = getpass.getuser()
@@ -39,5 +41,5 @@ class SvnDetailWindow(QDialog, Ui_dialog):
 
 if __name__ == "__main__":
     app = QApplication([])
-    w = SvnDetailWindow()
+    w = SvnDetailWindow(None)
     app.exec()

@@ -3,9 +3,11 @@ from PyQt6.QtWidgets import QDialog, QApplication
 import getpass
 
 from WindowClass.GUI.Boost170DetailWindowGUI import *
-class Boost170DetailWindow(QDialog, Ui_dialog):
-    def __init__(self, x=None, y=None):
-        super().__init__()
+
+
+class Boost170DetailWindow(QDialog, Ui_boost170dialog):
+    def __init__(self, parent=None, x=None, y=None):
+        super().__init__(parent)
         self.setupUi(self)
         self.setFixedSize(QSize(400, 300))
         self.username = getpass.getuser()
@@ -23,5 +25,5 @@ class Boost170DetailWindow(QDialog, Ui_dialog):
 
 if __name__ == "__main__":
     app = QApplication([])
-    w = Boost170DetailWindow()
+    w = Boost170DetailWindow(None)
     app.exec()

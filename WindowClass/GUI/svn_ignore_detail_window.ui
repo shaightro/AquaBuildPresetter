@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>dialog</class>
- <widget class="QDialog" name="dialog">
+ <class>svnignoredialog</class>
+ <widget class="QDialog" name="svnignoredialog">
   <property name="windowModality">
    <enum>Qt::NonModal</enum>
   </property>

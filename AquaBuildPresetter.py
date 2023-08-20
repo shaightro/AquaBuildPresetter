@@ -1,5 +1,7 @@
 from WindowClass.MainWindowClass import *
+import sys
 
-app = QApplication([])
-w = MainWindow()
-app.exec()
+if __name__ == "__main__":
+    app = QApplication([])
+    w = MainWindow()
+    sys.exit(app.exec())

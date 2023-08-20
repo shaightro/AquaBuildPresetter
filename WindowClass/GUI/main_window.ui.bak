@@ -45,7 +45,7 @@
      <string/>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -548,7 +548,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>※ 설치 경로가 C:\Program Files (x86)\ 내에 있는 경우, 관리자 권한이 필요합니다.</string>
+       <string>※ 설치 경로가 C:\Program Files (x86)\ 내에 있는 경우, 관리자 모드에서 실행해야 합니다.</string>
       </property>
       <property name="textFormat">
        <enum>Qt::PlainText</enum>
