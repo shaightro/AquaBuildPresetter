@@ -1,0 +1,26 @@
+MessageBox.Show("Hello Mablang World!",
+				"Mablang",
+				MessageBoxButtons.OKCancel, 
+				MessageBoxIcon.Error);
+
+Button: 
+AbortRetryIgnore : 중단, 다시시도, 무시 버튼 표시
+OK : 확인 버튼 표시 
+OKCancel : 확인, 취소 버튼 표시 
+RetryCancel : 다시 시도, 취소 버튼 표시 
+YesNo : 예, 아니요 버튼 표시 
+YesNoCancel : 예, 아니요, 취소 버튼 표시
+
+Icon:
+Asterisk : 정보 아이콘 
+Error : 빨간색 원 안 X 표시 
+Exclamation : 경고 아이콘 
+Hand : 손바닥 아이콘 
+Information : 정보 아이콘
+None : 아이콘을 표시하지 않음 
+Question : 물음표 아이콘 
+Stop : 빨간색 원 안 X 표시 
+Warning : 경고 아이콘
+
+
+DefaultButton
