@@ -801,8 +801,9 @@ namespace AquaBuildPresetterApp
                 }
 
                 // 혹시나 파일이 있는지 체크
-                string props_32 = vs2008_install_dir + "properties_win32.props";
-                if (File.Exists(props_32))
+                string props_32 = vs2008_install_dir + "properties_win32.vsprops";
+                string props_64 = vs2008_install_dir + "properties_x64.vsprops";
+                if (File.Exists(props_32) || File.Exists(props_64))
                 {
                     // 덮어쓰기 여부 확인
                     if (MessageBox.Show(this, "설정 파일이 이미 존재합니다.\r\n덮어쓰시겠습니까?",
@@ -833,9 +834,29 @@ namespace AquaBuildPresetterApp
 	/>
 </VisualStudioPropertySheet>";
 
+                string file_contents_64 = @"<?xml version=""1.0"" encoding=""ks_c_5601-1987""?>
+<VisualStudioPropertySheet
+	ProjectType=""Visual C++""
+	Version=""8.00""
+	Name=""properties_x64""
+	>
+	<UserMacro
+		Name=""boost_1_66""
+		Value=""" + include_path + @"""
+	/>
+	<UserMacro
+		Name=""boost_1_66_lib""
+		Value=""" + lib32_path + @"""
+	/>
+</VisualStudioPropertySheet>";
+
                 using (StreamWriter writer = new StreamWriter(props_32))
                 {
                     writer.WriteLine(file_contents);
+                }
+                using (StreamWriter writer = new StreamWriter(props_64))
+                {
+                    writer.WriteLine(file_contents_64);
                 }
 
                 MessageBox.Show(this, vs2008_install_dir + " 경로에 설정 파일을 저장했습니다", "만세!",
@@ -898,9 +919,10 @@ namespace AquaBuildPresetterApp
                     return;
                 }
 
-                string props_32 = vs2008_install_dir + "properties_win32.props";
+                string props_32 = vs2008_install_dir + "properties_win32.vsprops";
+                string props_64 = vs2008_install_dir + "properties_x64.vsprops";
 
-                if (!(File.Exists(props_32)))
+                if (!(File.Exists(props_32)) && !(File.Exists(props_64)))
                 {
                     MessageBox.Show(this,
                     "설정 파일이 존재하지 않습니다.",
@@ -918,6 +940,10 @@ namespace AquaBuildPresetterApp
                     if (File.Exists(props_32))
                     {
                         File.Delete(props_32);
+                    }
+                    if (File.Exists(props_64))
+                    {
+                        File.Delete(props_64);
                     }
                     if (Directory.GetFiles(vs2008_install_dir).Length == 0)
                     {
